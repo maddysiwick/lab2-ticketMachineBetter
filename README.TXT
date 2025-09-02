@@ -36,3 +36,8 @@ else {
     System.out.println("Too expensive :(, must be at most " + budget + " cents.");
 }
 second message is more clear
+59. it resets balance to zero before returning it. you can demonstrate this by running it with different initial values of balance
+60. the return statement ends the block, code after it will not run
+61. because price is being declared in the body of the constructor, it is not considered the same price variable as the field and so the
+field does not get updated (i think)
+62.

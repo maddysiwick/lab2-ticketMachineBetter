@@ -1,5 +1,5 @@
 /**
- * TicketMachine models a ticket machine that issues
+ * DiscountTicketMachine models a ticket machine that issues
  * flat-fare tickets.
  * The price of a ticket is specified via the constructor.
  * Instances will check to ensure that a user only enters
@@ -9,10 +9,11 @@
  * @author David J. Barnes and Michael Kölling
  * @version 7.1
  */
-public class TicketMachine
+public class DiscountTicketMachine
 {
     // The price of a ticket from this machine.
     private int price;
+    private int basePrice;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
@@ -21,9 +22,10 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public DiscountTicketMachine(int cost)
     {
-        price = cost;
+        basePrice = cost;
+        price = basePrice;
         balance = 0;
         total = 0;
     }
@@ -79,6 +81,7 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the price.
             balance = balance - price;
+            price = basePrice;
         }
         else {
             System.out.printf("You must insert at least %d more cents.%n",
@@ -102,5 +105,9 @@ public class TicketMachine
         int formerTotal = total;
         total = 0;
         return formerTotal;
+    }
+    public void discountTicket(int discount)
+    {
+        price = price-discount;
     }
 }

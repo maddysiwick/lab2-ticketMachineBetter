@@ -65,6 +65,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
+        //question 63
         int amountLeftToPay = price-balance;
         if(amountLeftToPay<=0) {
             // Simulate the printing of a ticket.
@@ -97,7 +98,7 @@ public class TicketMachine
         balance = 0;
         return amountToRefund;
     }
-    public int emptyMachine()
+    public int emptyMachine()//question 62
     {
         int formerTotal = total;
         total = 0;

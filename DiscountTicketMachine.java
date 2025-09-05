@@ -9,6 +9,7 @@
  * @author David J. Barnes and Michael Kölling
  * @version 7.1
  */
+//question 64
 public class DiscountTicketMachine
 {
     // The price of a ticket from this machine.
